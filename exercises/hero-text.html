@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Block with Text</title>
+    <meta name="description" content="An above-the-fold hero block with animated text and an animated background color.">
+    
+    <!-- Link to Tailwind CSS v4 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom styles -->
+    <style type="text/tailwindcss">
+        header { 
+            @apply min-h-[60vh] md:min-h-[80vh]
+            flex flex-col justify-center
+            px-8 lg:px-60 py-12
+            text-center;
+
+            /* Continuous background color change animation */
+            animation: bg-change 6s ease-in-out infinite alternate;
+        }
+
+        header h1 {
+            @apply text-7xl md:text-8xl
+            text-white font-bold
+            tracking-tight
+            mb-6;
+        }
+
+        header h2 {
+            @apply text-4xl md:text-5xl
+            text-white;
+        }
+
+        /* Background animation (Yellow <-> Orange) */
+        @keyframes bg-change {
+            0% {
+                background-color: #021896; /* Yellow (yellow-400) */
+            }
+            100% {
+                background-color: #2534d4; /* Orange (orange-500) */
+            }
+        }
+
+        /* Slide-in-top animation for title */
+        .slide-in-top {
+            -webkit-animation: slide-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-top 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        @-webkit-keyframes slide-in-top {
+            0% {
+                -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-top {
+            0% {
+                -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Slide-in-left animation for subtitle */
+        .slide-in-left {
+            -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        @-webkit-keyframes slide-in-left {
+            0% {
+                -webkit-transform: translateX(-1000px);
+                transform: translateX(-1000px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-left {
+            0% {
+                -webkit-transform: translateX(-1000px);
+                transform: translateX(-1000px);
+                opacity: 0;
+            }
+            100% {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero block -->
+    <header>
+        <h1 class="slide-in-top">Cleudo Nogueira</h1>
+        <h2 class="slide-in-left">Creative Web Developer</h2>
+    </header>
+    <!-- /Hero block -->
+<p><a href="../index.html">Back to Home page</a></p>
+</body>
+</html>
